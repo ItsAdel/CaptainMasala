@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
+import Portfolio from './components/Portfolio';
 
 
 function App() {
   const [posts, setPosts] = useState(null);
 
   useEffect(() => {
-    const getData = async() => {
-      const demoData = await axios.get( "https://jsonplaceholder.typicode.com/posts");
+    const getData = async () => {
+      const demoData = await axios.get("https://jsonplaceholder.typicode.com/posts");
       setPosts(demoData.data);
     }
 
@@ -17,13 +18,14 @@ function App() {
 
   return (
     <div className="container">
-            <div className="row">
-        <div className="col-md-12 text-center" style={{ margin: "50px 0" }}>
-          <h1> Fake Posts from JSON Placeholder</h1>
+      <div className="row">
+        <div className="col-md-12 text-center text-6xl" style={{ margin: "50px 0" }}>
+          <h1>Captain Masala</h1>
+          <p>👨‍💻</p>
         </div>
       </div>
 
-      <div className="row">
+      {/* <div className="row">
         {posts &&
           posts.map((post) => (
             <div className="card col-md-4" key={post.id}>
@@ -33,7 +35,9 @@ function App() {
               </div>
             </div>
           ))}
-      </div>
+      </div> */}
+
+      <Portfolio />
     </div>
   );
 }
